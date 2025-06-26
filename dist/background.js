@@ -1,0 +1,1 @@
+chrome.runtime.onMessage.addListener((e,r,i)=>{e.action==="open-in-another-profile"&&e.url&&chrome.storage.sync.get("profile",o=>{const n=o.profile||"Profile 2";chrome.runtime.sendNativeMessage("com.kaishoya.openlinkprofile",{url:e.url,profile:n},function(s){})})});

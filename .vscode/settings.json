@@ -1,0 +1,36 @@
+{
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "html.validate.scripts": true,
+  "html.validate.styles": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "[svg]": {
+    "editor.formatOnSave": false
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
+    "editor.snippetSuggestions": "top"
+  },
+  "markdown.extension.tableFormatter.enabled": true,
+  "markdown.extension.tableFormatter.delimiterRowNoPadding": false,
+  "markdown.extension.tableFormatter.normalizeIndentation": false,
+  "todo-tree.filtering.includeHiddenFiles": true,
+  "html.format.wrapLineLength": 125,
+  "github.copilot.chat.scopeSelection": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.agent.thinkingTool": false,
+  "github.copilot.chat.editor.temporalContext.enabled": true,
+  "github.copilot.chat.notebook.followCellExecution.enabled": true,
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": "explicit",
+  // },
+  // "eslint.codeActionsOnSave.rules": null
+}

@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("profile"),t=document.getElementById("status");chrome.storage.sync.get("profile",n=>{n.profile&&(e.value=n.profile)}),document.getElementById("save").onclick=()=>{chrome.storage.sync.set({profile:e.value},()=>{t.textContent="保存しました",setTimeout(()=>t.textContent="",1500)})}});

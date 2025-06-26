@@ -1,0 +1,9 @@
+{
+  "name": "com.kaishoya.openlinkprofile",
+  "description": "Open link in another Chrome profile",
+  "path": "/usr/local/bin/com.kaishoya.openlinkprofile",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://[chrome-extension-id]/"
+  ]
+}
