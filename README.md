@@ -1,6 +1,6 @@
 # Open Link as
 Google Chrome拡張「Open Link as」は、Google Spreadsheet上のリンクを、指定した別のChromeプロファイルで簡単に開くことができる拡張機能です。  
-右クリックメニュー「Open Link as > {プロファイル}」の機能をワンステップで実行できるようにしました。
+右クリックメニュー「Open Link as > {プロファイル}」の機能をワンステップで実行できるようにしました。  
 現状、Macのみ対応してます。
 
 ## 主な特徴
