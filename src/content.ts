@@ -1,5 +1,7 @@
 function addOpenInAnotherProfileButton(header: HTMLElement, linkUrl: string) {
   if (header.querySelector('.open-in-another-profile-btn')) return;
+  const span = document.createElement('span');
+  span.setAttribute('data-is-tooltip-wrapper', 'true');
   const btn = document.createElement('button');
   btn.className = 'open-in-another-profile-btn';
   btn.style.marginLeft = '8px';
@@ -35,15 +37,17 @@ function addOpenInAnotherProfileButton(header: HTMLElement, linkUrl: string) {
       }
     });
   };
-  header.appendChild(btn);
+  span.appendChild(btn);
+  header.appendChild(span);
 }
 
 // link-bubble-headerの監視
 const observer = new MutationObserver(() => {
-  document.querySelectorAll<HTMLElement>('.link-bubble-header').forEach(header => {
+  document.querySelectorAll<HTMLElement>('.appsElementsLinkPreviewBaseHeader').forEach(header => {
+    const actionButtonsRow = header.querySelector('.appsElementsLinkPreviewBaseActionButtonsRow') as HTMLElement;
     const link = header.querySelector('a');
-    if (link && link.href) {
-      addOpenInAnotherProfileButton(header, link.href);
+    if (link && link.href && actionButtonsRow) {
+      addOpenInAnotherProfileButton(actionButtonsRow, link.href);
     }
   });
 });
