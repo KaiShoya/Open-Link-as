@@ -10,9 +10,30 @@ function addOpenInAnotherProfileButton(header: HTMLElement, linkUrl: string) {
       <line x1="10" y1="14" x2="21" y2="3"/>
     </svg>
   `;
-  btn.onclick = (e) => {
+  btn.onclick = async (e) => {
     e.stopPropagation();
-    chrome.runtime.sendMessage({ action: 'open-in-another-profile', url: linkUrl });
+    // target/custom値を取得
+    chrome.storage.sync.get(['target', 'custom'], (data) => {
+      if (data.target === 'custom' && data.custom) {
+        const win = window.open('', data.custom);
+        if (win) {
+          // about:blankを挟んでから再度遷移させることで確実にリロード
+          win.location.href = 'about:blank';
+          setTimeout(() => {
+            try {
+              win.location.href = linkUrl;
+              win.focus();
+            } catch (e) {
+              window.open(linkUrl, data.custom);
+            }
+          }, 100);
+        } else {
+          window.open(linkUrl, data.custom);
+        }
+      } else {
+        chrome.runtime.sendMessage({ action: 'open-in-another-profile', url: linkUrl });
+      }
+    });
   };
   header.appendChild(btn);
 }

@@ -3,15 +3,29 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>プロファイル選択</title>
+  <title>ターゲット選択</title>
 </head>
 
 <body>
   <label>
-    プロファイル名:
+    target:
+    <select id="target-select">
+      <option value="profile">別プロファイル</option>
+      <option value="_blank">_blank（新しいタブ）</option>
+      <option value="_self">_self（現在のタブ）</option>
+      <option value="custom">カスタム名</option>
+    </select>
     <input
       id="profile"
       type="text"
+      placeholder="カスタム名"
+      style="display:none;"
+    />
+    <input
+      id="target"
+      type="text"
+      placeholder="カスタム名"
+      style="display:none;"
     />
   </label>
   <button id="save">保存</button>
